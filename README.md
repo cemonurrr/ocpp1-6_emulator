@@ -1,5 +1,5 @@
 # ocpp1-6_emulator
-OCPP 1.6 Charge Point Emulator
+OCPP 1.6 Charge Point Emulatorhttps://github.com/cemonurrr/ocpp1-6_emulator/tree/main
 OCPP 1.6 protokolüne göre çalışan bir şarj istasyonu emülatörüdür. Şu işlemleri başarıyla simüle ediyor:
 BootNotification
 Heartbeat
@@ -14,6 +14,7 @@ GetConfiguration / ChangeConfiguration
 
 Örnek Kullanımlar:
 python emulator.py
+
 Bu komut varsayılan değerlerle çalışır (id=EKL0001, url=ws://localhost:9000, verbose kapalı).
 
 
