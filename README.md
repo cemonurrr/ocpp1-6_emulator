@@ -1,29 +1,38 @@
-# ocpp1-6_emulator
-OCPP 1.6 Charge Point Emulatorhttps://github.com/cemonurrr/ocpp1-6_emulator/tree/main
-OCPP 1.6 protokolüne göre çalışan bir şarj istasyonu emülatörüdür. Şu işlemleri başarıyla simüle ediyor:
-BootNotification
-Heartbeat
-StatusNotification
-Authorize
-StartTransaction
-StopTransaction
-MeterValues
-RemoteStartTransaction / RemoteStopTransaction
-Reset
-GetConfiguration / ChangeConfiguration
+# OCPP 1.6 Charge Point Emulator
 
-Örnek Kullanımlar:
-python emulator.py
+## Türkçe
 
-Bu komut varsayılan değerlerle çalışır (id=EKL0001, url=ws://localhost:9000, verbose kapalı).
+Bu proje, test amaçlı geliştirilmiş basit bir **OCPP 1.6 Şarj İstasyonu Emülatörüdür**.  
+Gerçek bir elektrikli araç şarj istasyonunu taklit ederek bir **OCPP Central System / Backend** ile WebSocket üzerinden haberleşir.
 
+Emülatör; boot bildirimi, durum bildirimi, heartbeat, yetkilendirme, şarj başlatma/durdurma ve sayaç değerleri gönderme gibi temel OCPP akışlarını simüle eder.
 
-python emulator.py --id TEST123 --url ws://192.168.1.10:9000
-İstasyon kimliği TEST123, bağlanacağı URL ws://192.168.1.10:9000 olur.
+---
 
-python emulator.py -v
-Varsayılan ayarlarla çalışır, ama loglar ayrıntılı şekilde gösterilir (verbose açık).
+## Özellikler
 
+- OCPP 1.6 WebSocket bağlantısı
+- `BootNotification` gönderimi
+- `StatusNotification` gönderimi
+- Periyodik `Heartbeat`
+- Periyodik `MeterValues`
+- `RemoteStartTransaction` desteği
+- `RemoteStopTransaction` desteği
+- `Reset` komutu desteği
+- `GetConfiguration` desteği
+- `ChangeConfiguration` desteği
+- Bağlantı koparsa otomatik tekrar bağlanma denemesi
+- Komut satırından Charge Point ID ve Central System URL belirleme
 
+---
 
+## Gereksinimler
+
+- Python 3.8+
+- websockets kütüphanesi
+
+Kurulum:
+
+```bash
+pip install websockets
 
